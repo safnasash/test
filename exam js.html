@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <title> registration </title>
+        <script>
+            function fclick(){
+                validate=true;
+                 d1=document.getElementsByName("fname")[0].value;
+                 d2=document.getElementsByName("sname")[0].value;
+                 d3=document.getElementsByName("eml")[0].value;
+                 d4=document.getElementsByName("pswd")[0].value;
+                 d5=document.getElementsByName("brnch")[0].value;
+                // d6=document.getElementsByName("m")[0];
+                // d7=document.getElementsByName("f")[1];
+                d8=document.getElementsByName("dob")[0].value;
+                
+                var sub1=d3.split("@");
+                 a=sub1.length;
+                var sub2=sub1[a-1].split(".");
+                 b=sub2.length;
+                  var db=document.getElementsByName("dob")[0].value;
+                 var today=new Date();
+                 var mydate=new Date(db);
+                 var md=mydate.getFullYear();
+                var k=today.getFullYear()-md;
+                
+                if(d1==""){
+                    document.getElementById("id1").innerHTML="enter your first name";
+                    validate=false;
+                }
+                if(d2==""){
+                    document.getElementById("id2").innerHTML="enter your second name";
+                    validate=false;
+                }
+                if(d3==""){
+                    document.getElementById("id3").innerHTML="enter your e_mail id";
+                    validate=false;
+                }
+                else if(sub1.length<2 || sub2.length<2 || sub1[a-1].length<2 || sub2[b-1].length<2)
+                {
+                    document.getElementById("id3").innerHTML="invalid mail id";
+                    validate=false;
+                }
+                 if(d4==""){
+                     document.getElementById("id4").innerHTML="enter your password";
+                     validate=false;
+                 }
+                 else if(d4.length<6)
+                 {
+                     document.getElementById("id4").innerHTML="atleast 6 characters";
+                     validate=false;
+                 }
+                 if(d5=="branch")
+                 {
+                     document.getElementById("id5").innerHTML="choose any branch";
+                     validate=false;
+                 }
+                /* if(d6.checked==false && d7.checked==false)
+                 {
+                    document.getElementById("id6").innerHTML="choose your gender"; 
+                    validate=false;
+                 }*/
+                 if(d8==""){
+                     document.getElementById("id7").innerHTML="enter your dob";
+                     validate=false;
+                 }
+                 else if(k<15)
+                 {
+                     document.getElementById("id7").innerHTML="age should be minimum of 15";
+                     validate=false;
+                 }
+                 return validate;
+            }
+           
+        </script>
+        
+           
+    </head>
+    <body>
+       <!-- <style>
+            .label{
+                color="Red";
+            }
+            </style>-->
+        <form freg action="" method="" onsubmit="return fclick()">
+            
+            <table  align="center" border='1' cellspacing='0' width='100'>
+               
+                <p align="center"><font color="#08088A">REGISTER NOW!!! </font></p>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="firstname" name="fname" size='30' ></td>
+                       <td> <input type="text" placeholder="surname" name="sname" size='30'>
+                       <td><label id=id1></label></td>
+                       <td><label id=id2></label></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'><input type="text" placeholder="e-mail" name="eml" size='60'>
+                   <td><label id=id3></label></td>
+                </tr>
+                <tr>
+                    <td colspan='2'><input type="password" placeholder="password" name="pswd" size='60'></td>
+                    <td><label id=id4></label></td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <p>choose your branch</p>
+                        <select name="brnch"><option value="branch" >branch</option>
+                            <option >CS</option>
+                        <option >IT</option>
+                        <option >EC</option>
+                        </select>
+                        <td><label id="id5"></label></td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                         
+                       <td  
+                           <p>GENDER</p></td>
+                           <td><input type="radio"  name="m">male</td>
+                       <td><input type="radio" name="f">female</td>
+                       <td><label id=id6></label></td>
+                </tr>
+               <tr>
+                    <td colspan='2'>
+                        <input type="text" placeholder="BIRTHDAY" name="dob">
+                        
+                        </td>
+                        <td><label id=id7></label></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="submit" style="background-color: #77b55a">
+                            </td>
+                            </tr>
+                 <!-- <tr><td> <p>BIRTHDAY</p> 
+                     <select name="dy"><option value="day">day</option>
+                     <option>1</option>
+                     <option>2</option>
+                     <option>3</option>
+                     <option>4</option>
+                     <option>5</option>
+                     </select>
+                     <select name="mnth"<option value="month">month</option>
+                     <option>jan</option>
+                     <option>feb</option>
+                     <option>march</option>
+                     <option>april</option>
+                     <option>may</option>
+                     </select>
+                     <select name="yr"><option value="year">year</opton>
+                     <option>1990</option>
+                     <option>1991</option>
+                     <option>1992</option>
+                     <option>2001</option>
+                     <option>2002</option></td>
+                <td><label id=id7></label></td>
+                <td><label id=id8></label></td>
+                <td><label id=id9></label></td>
+                </tr>-->
+           </table> 
+        </form>
+        
+    </body>
+</html>
